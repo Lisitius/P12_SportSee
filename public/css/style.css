@@ -33,6 +33,42 @@ body {
   text-decoration: none;
 }
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  height: 960px;
+  min-width: 117px;
+  background-color: #020203;
+}
+.nav__allicon {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.nav__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.nav__copyright {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  bottom: 120px;
+  position: absolute;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}
+
 body {
   margin: 0;
   padding: 0;
