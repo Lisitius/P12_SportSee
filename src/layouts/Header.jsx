@@ -2,6 +2,12 @@ import { NavLink } from "react-router-dom";
 import "../sass/layouts/_header.scss";
 import image from "../assets/logo.png";
 
+/**
+ * Components for site navigation
+ *
+ * @returns JSX Header/Navbar components
+ */
+
 const Header = () => {
   return (
     <header className="header">
