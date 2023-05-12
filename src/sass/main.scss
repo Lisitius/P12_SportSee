@@ -1,5 +1,11 @@
+//base
+@use "./base/index";
+
 // utils
 @use "./utils";
 
+//layouts
+@use "./layouts";
+
 //pages
-@use "./pages/";
+@use "./pages";

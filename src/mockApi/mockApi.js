@@ -259,3 +259,5 @@ const userPerformance = [
     ],
   },
 ];
+
+export default { users, userActivity, userSessions, userPerformance };
