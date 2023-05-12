@@ -1,19 +1,53 @@
-/* Error: The default namespace "" is not a valid Sass identifier.
- * 
- * Recommendation: add an "as" clause to define an explicit namespace.
- *   ,
- * 5 | @use "./pages/";
- *   | ^^^^^^^^^^^^^^^
- *   '
- *   src\sass\main.scss 5:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: The default namespace "" is not a valid Sass identifier.\a\aRecommendation: add an "as" clause to define an explicit namespace.\a   \2577 \a 5 \2502  @use "./pages/";\d\a   \2502  ^^^^^^^^^^^^^^^\a   \2575 \a   src\\sass\\main.scss 5:1  root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 91px;
+  background-color: #020203;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header__logo {
+  padding-left: 30px;
+  width: 178px;
+  height: 61px;
+}
+.header__navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.header__navigation--link {
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 70px;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

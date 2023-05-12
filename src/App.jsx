@@ -1,10 +1,13 @@
 import "./sass/pages/_app.scss";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./layouts/Header";
 
 function App() {
   return (
-    <div className="App">
-      <p>HELLO WORLD</p>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <div className="App"></div>
+    </BrowserRouter>
   );
 }
 

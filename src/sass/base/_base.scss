@@ -1,0 +1,5 @@
+@use "../utils" as u;
+
+body {
+  @include u.fonts(24px, 500, u.$primary-color);
+}

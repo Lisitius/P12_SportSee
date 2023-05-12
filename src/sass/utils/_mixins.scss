@@ -1,0 +1,8 @@
+@use "../base/typography" as ty;
+
+@mixin fonts($size, $weight, $color) {
+  font-family: ty.$primary-font;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
