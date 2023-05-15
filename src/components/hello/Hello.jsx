@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUser } from "../../service/apiUser";
 
-const BonjourUser = () => {
+const Hello = () => {
   const { id } = useParams();
   const [user, setUser] = useState(null);
 
@@ -38,4 +38,4 @@ const BonjourUser = () => {
   );
 };
 
-export default BonjourUser;
+export default Hello;
