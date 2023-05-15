@@ -3,11 +3,30 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUser } from "../../service/apiUser";
 
+/**
+ * A React component that displays a welcome message to a specific user.
+ * User ID is retrieved from URL using `useParams`.
+ * User information is retrieved using the `getUser` function.
+ *
+ * @component
+ * @example
+ * return (
+ * <Hello />
+ * )
+ */
+
 const Hello = () => {
+  // Retrieves user ID from URL.
   const { id } = useParams();
   const [user, setUser] = useState(null);
 
+  // Retrieves user information from API on component load.
   useEffect(() => {
+    /**
+     * An asynchronous function that retrieves a user from the API.
+     * @async
+     * @function
+     */
     const fetchUser = async () => {
       try {
         const fetchedUser = await getUser(id);
