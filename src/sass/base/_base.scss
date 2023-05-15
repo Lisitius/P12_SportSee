@@ -2,4 +2,6 @@
 
 body {
   @include u.fonts(24px, 500, u.$primary-color);
+  margin: 0;
+  padding: 0;
 }

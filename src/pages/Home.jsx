@@ -1,11 +1,10 @@
-import Banner from "../../components/banner/Banner";
-import Cards from "../../components/cards/cards";
-import "./_home.scss";
+import "../sass/pages/_home.scss";
+import Account from "../components/account/Account";
 
 const Home = () => {
   return (
     <section className="home-container">
-      <div>HELLO WORLD</div>
+      <Account />
     </section>
   );
 };

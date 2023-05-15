@@ -1,37 +1,41 @@
-const users = [
+export const users = [
   {
-    id: 12,
-    userInfos: {
-      firstName: "Karl",
-      lastName: "Dovineau",
-      age: 31,
-    },
-    todayScore: 0.12,
-    keyData: {
-      calorieCount: 1930,
-      proteinCount: 155,
-      carbohydrateCount: 290,
-      lipidCount: 50,
+    data: {
+      id: 12,
+      userInfos: {
+        firstName: "Karl",
+        lastName: "Dovineau",
+        age: 31,
+      },
+      todayScore: 0.12,
+      keyData: {
+        calorieCount: 1930,
+        proteinCount: 155,
+        carbohydrateCount: 290,
+        lipidCount: 50,
+      },
     },
   },
   {
-    id: 18,
-    userInfos: {
-      firstName: "Cecilia",
-      lastName: "Ratorez",
-      age: 34,
-    },
-    score: 0.3,
-    keyData: {
-      calorieCount: 2500,
-      proteinCount: 90,
-      carbohydrateCount: 150,
-      lipidCount: 120,
+    data: {
+      id: 18,
+      userInfos: {
+        firstName: "Cecilia",
+        lastName: "Ratorez",
+        age: 34,
+      },
+      score: 0.3,
+      keyData: {
+        calorieCount: 2500,
+        proteinCount: 90,
+        carbohydrateCount: 150,
+        lipidCount: 120,
+      },
     },
   },
 ];
 
-const userActivity = [
+export const userActivity = [
   {
     userId: 12,
     sessions: [
@@ -114,7 +118,7 @@ const userActivity = [
   },
 ];
 
-const userSessions = [
+export const userSessions = [
   {
     userId: 12,
     sessions: [
@@ -183,7 +187,7 @@ const userSessions = [
   },
 ];
 
-const userPerformance = [
+export const userPerformance = [
   {
     userId: 12,
     kind: {
@@ -259,5 +263,3 @@ const userPerformance = [
     ],
   },
 ];
-
-export default { users, userActivity, userSessions, userPerformance };
