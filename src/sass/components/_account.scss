@@ -1,0 +1,10 @@
+.users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+
+  &__user {
+    margin-left: 30px;
+  }
+}

@@ -4,17 +4,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   position: fixed;
   z-index: 2;
-  height: 960px;
+  height: 100vh;
   min-width: 117px;
   background-color: u.$secondary-color;
-
   &__allicon {
     display: flex;
     flex-direction: column;
-    margin-bottom: 100px;
+    margin-top: 200px;
+    @media (max-height: 850px) {
+      margin-top: 100px;
+    }
   }
 
   &__icon {
@@ -29,7 +30,7 @@
 
   &__copyright {
     @include u.fonts(12px, 500, u.$primary-color);
-    bottom: 120px;
+    bottom: 180px;
     position: absolute;
     white-space: nowrap;
     transform: rotate(-90deg);
