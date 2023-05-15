@@ -1,6 +1,6 @@
 import "../../sass/components/_account.scss";
 import React, { useEffect, useState } from "react";
-import { getUser } from "../../service/api";
+import { getUser } from "../../service/apiUser";
 import { Link } from "react-router-dom";
 
 /**

@@ -1,0 +1,18 @@
+@use "../utils/index" as u;
+
+.hello {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    @include u.fonts(48px, 500, u.$secondary-color);
+    margin: 0;
+    span {
+      color: u.$tertiary-color;
+    }
+  }
+
+  &__gg {
+    @include u.fonts(18px, 400, u.$secondary-color);
+    margin-top: 20px;
+  }
+}
