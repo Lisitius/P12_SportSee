@@ -1,4 +1,6 @@
-p {
-  font-size: 80px;
-  color: red;
+.dashboard {
+  padding: 30px 220px;
+  @media (max-width: 1100px) {
+    padding: 15px 160px;
+  }
 }
