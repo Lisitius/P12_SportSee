@@ -1,9 +1,10 @@
 import "../sass/pages/_dashboard.scss";
 import React from "react";
 import Hello from "../components/hello/Hello";
+import UserActivity from "../components/charts/UserActivity";
 
 /**
- * Un composant qui affiche le tableau de bord d'un utilisateur spécifique.
+ * A component that displays a specific user's dashboard.
  *
  * @component
  * @example
@@ -15,6 +16,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Hello />
+      <UserActivity />
     </div>
   );
 };
