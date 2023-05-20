@@ -1,0 +1,7 @@
+@use "../utils/index" as u;
+
+.barChart {
+  &__textColorLegend {
+    @include u.fonts(14px, 500, u.$light-gray);
+  }
+}

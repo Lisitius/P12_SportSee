@@ -1,41 +1,19 @@
+/**
+ * @module Account
+ */
+
 import "../../sass/components/_account.scss";
-import React, { useEffect, useState } from "react";
-import { getUser } from "../../service/apiUser";
 import { Link } from "react-router-dom";
+import { useAccountData } from "../../hooks/useAccountData";
 
 /**
- * A component that displays a list of user accounts.
- * Each username is a link that redirects to the corresponding user's dashboard.
+ * The Account component displays a list of users.
  *
- * @component
- * @example
- * return (
- *   <Account />
- * )
+ * @returns {JSX.Element} The list of users.
  */
+
 const Account = () => {
-  const [users, setUsers] = useState([]);
-
-  /**
-   * Retrieves users on component load.
-   */
-  useEffect(() => {
-    /**
-     * Retrieves API users.
-     * @async
-     * @function
-     */
-    const fetchUsers = async () => {
-      try {
-        const fetchedUsers = await getUser();
-        setUsers(fetchedUsers);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchUsers();
-  }, []);
+  const users = useAccountData();
 
   return (
     <div className="users">
