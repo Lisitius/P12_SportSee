@@ -1,7 +1,27 @@
 @use "../utils/index" as u;
 
 .barChart {
+  position: relative;
+  width: 840px;
+  height: 260px;
+
+  &__title {
+    position: absolute;
+    @include u.fonts(15px, 500, u.$dark-gray);
+  }
+
   &__textColorLegend {
     @include u.fonts(14px, 500, u.$light-gray);
+  }
+
+  &__toolTip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: u.$tertiary-color;
+    @include u.fonts(7px, 500, u.$primary-color);
+    width: 40px;
+    height: 65px;
   }
 }

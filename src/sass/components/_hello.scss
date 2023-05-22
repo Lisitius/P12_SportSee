@@ -3,6 +3,7 @@
 .hello {
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
   &__title {
     @include u.fonts(48px, 500, u.$secondary-color);
     margin: 0;
