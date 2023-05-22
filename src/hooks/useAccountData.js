@@ -16,7 +16,7 @@ export const useAccountData = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const userIds = [12, 18]; // Insérer les IDs des utilisateurs ici
+      const userIds = [12, 18];
       const fetchedUsers = [];
 
       for (const id of userIds) {
