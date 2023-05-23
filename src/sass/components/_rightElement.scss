@@ -1,0 +1,51 @@
+@use "../utils/index" as u;
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+  }
+
+  .calories {
+    background-color: rgb(255, 1, 1, 0.1);
+  }
+
+  .proteines {
+    background-color: rgb(75, 184, 255, 0.2);
+  }
+
+  .glucides {
+    background-color: rgb(249, 206, 35, 0.3);
+  }
+
+  .lipides {
+    background-color: rgb(253, 81, 129, 0.2);
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__informations {
+    margin-left: 30px;
+  }
+
+  &__number {
+    @include u.fonts(20px, 700, u.$secondary-color);
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    @include u.fonts(14px, 500, u.$light-gray);
+    margin: 0;
+  }
+}

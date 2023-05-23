@@ -16,7 +16,6 @@ export const getUserActivity = async (userId) => {
     const response = await axios.get(
       `http://localhost:3000/user/${userId}/activity`
     );
-    console.log("Api", response.data.data);
     return response.data.data;
   } catch (error) {
     console.error("Impossible de récupéré les données venant de l'api");
@@ -24,7 +23,6 @@ export const getUserActivity = async (userId) => {
       (activity) => activity.data.userId === Number(userId)
     );
     if (activity) {
-      console.log("MOCK", activity.data);
       return activity.data;
     } else {
       throw new Error(
