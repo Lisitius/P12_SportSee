@@ -28,3 +28,19 @@ export const useHelloData = (userId) => {
 
   return user;
 };
+
+export const useKeyData = (userId) => {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const userData = await getUserData(userId);
+
+      setUser(userData.keyData);
+    };
+
+    fetchUser();
+  }, [userId]);
+
+  return user;
+};

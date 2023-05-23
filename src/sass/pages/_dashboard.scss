@@ -1,7 +1,14 @@
 .dashboard {
-  padding: 30px 220px;
-  @media (max-width: 1100px) {
-    padding: 15px 160px;
+  position: relative;
+  margin-left: 15%;
+  margin-top: 3%;
+  @media (max-width: 1300px) {
+  }
+
+  &__ossekour {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   &__charts {
@@ -10,6 +17,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 14px;
+    @media (max-width: 1300px) {
+      width: 600px;
+    }
 
     .triple {
       margin-top: 30px;
@@ -17,6 +27,19 @@
       .chart {
         margin-right: 20px;
       }
+    }
+  }
+
+  &__elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 500px;
+    margin-left: 50px;
+    @media (max-width: 1300px) {
+      width: 150px;
+      margin-left: 50px;
     }
   }
 }

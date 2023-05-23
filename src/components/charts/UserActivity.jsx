@@ -65,12 +65,12 @@ const UserActivity = () => {
             tickLine={false}
             dataKey="kilogram"
             stroke="#9B9EAC"
-            // domain={["dataMin -5", "dataMax +15"]}
+            domain={["dataMin -5", "dataMax +15"]}
           />
           <YAxis
             yAxisId="calories"
             type="number"
-            // domain={["dataMin -160", "dataMax +1"]}
+            domain={["dataMin -160", "dataMax +15"]}
             hide
           />
           <Tooltip content={<CustomTooltip />} />

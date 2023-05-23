@@ -1,4 +1,10 @@
-import { RadialBarChart, RadialBar, Legend } from "recharts";
+import "../../sass/components/_userScore.scss";
+import {
+  RadialBarChart,
+  RadialBar,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const UserScore = () => {
   const data = [
@@ -18,31 +24,29 @@ const UserScore = () => {
   };
 
   return (
-    <div>
-      <RadialBarChart
-        width={258}
-        height={263}
-        cx="50%"
-        cy="50%"
-        innerRadius="10%"
-        outerRadius="80%"
-        barSize={10}
-        data={data}
-      >
-        <RadialBar
-          minAngle={15}
-          label={{ position: "insideStart", fill: "#fff" }}
-          background
-          clockWise
-          dataKey="uv"
-        />
-        <Legend
-          iconSize={10}
-          layout="vertical"
-          verticalAlign="middle"
-          wrapperStyle={style}
-        />
-      </RadialBarChart>
+    <div className="scoreContainer">
+      <ResponsiveContainer width="100%" height="100%">
+        <RadialBarChart
+          innerRadius="10%"
+          outerRadius="80%"
+          barSize={10}
+          data={data}
+        >
+          <RadialBar
+            minAngle={15}
+            label={{ position: "insideStart", fill: "#fff" }}
+            background
+            clockWise
+            dataKey="uv"
+          />
+          <Legend
+            iconSize={10}
+            layout="vertical"
+            verticalAlign="middle"
+            wrapperStyle={style}
+          />
+        </RadialBarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

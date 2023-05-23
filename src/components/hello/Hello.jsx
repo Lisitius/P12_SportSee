@@ -5,7 +5,7 @@
 import "../../sass/components/_hello.scss";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useHelloData } from "../../hooks/useHelloData";
+import { useHelloData } from "../../hooks/useUserData";
 
 /**
  * The Hello component displays a welcome message to the user in the Dashboard page.

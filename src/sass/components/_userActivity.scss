@@ -4,6 +4,9 @@
   position: relative;
   width: 840px;
   height: 260px;
+  @media (max-width: 1300px) {
+    width: 600px;
+  }
 
   &__title {
     position: absolute;
