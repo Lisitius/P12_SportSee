@@ -4,9 +4,7 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 import useSessionsData from "../../hooks/useSessionsData";
@@ -32,22 +30,19 @@ const UserAverageSession = () => {
         <LineChart
           data={data}
           margin={{
-            top: 40,
+            top: 30,
             right: 0,
             left: 0,
             bottom: 40,
           }}
         >
           <XAxis
-            textAnchor="start"
-            sclaeToFit="true"
-            interval={0}
             dataKey="day"
+            interval={0}
             axisLine={false}
             tickLine={false}
             tickMargin={40}
-            // textAnchor="middle"
-            tick={{ fill: "#fff", opacity: ".4", fontSize: 10 }}
+            tick={{ fill: "#fff", opacity: "0.4", fontSize: 10 }}
           />
           <YAxis
             axisLine={false}
