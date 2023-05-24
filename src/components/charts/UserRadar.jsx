@@ -7,60 +7,45 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import usePerformanceData from "../../hooks/usePerformanceData";
 
 const UserRadar = () => {
-  const data = [
-    {
-      subject: "Math",
-      A: 120,
-      B: 110,
-      fullMark: 150,
-    },
-    {
-      subject: "Chinese",
-      A: 98,
-      B: 130,
-      fullMark: 150,
-    },
-    {
-      subject: "English",
-      A: 86,
-      B: 130,
-      fullMark: 150,
-    },
-    {
-      subject: "Geography",
-      A: 99,
-      B: 100,
-      fullMark: 150,
-    },
-    {
-      subject: "Physics",
-      A: 85,
-      B: 90,
-      fullMark: 150,
-    },
-    {
-      subject: "History",
-      A: 65,
-      B: 85,
-      fullMark: 150,
-    },
+  const testData = usePerformanceData();
+  // console.log(testData);
+
+  const kinds = [
+    "Cardio",
+    "Energie",
+    "Endurance",
+    "Force",
+    "Vitesse",
+    "Intensité",
   ];
+
+  const dataRadar = kinds.map((kind, index) => {
+    return { kind, value: testData?.data?.[index]?.value };
+  });
+
+  console.log(dataRadar);
 
   return (
     <div className="radarContainer">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="subject" />
-          <PolarRadiusAxis />
+        <RadarChart outerRadius={75} data={dataRadar}>
+          <PolarGrid radialLines={false} stroke="#fff" />
+          <PolarAngleAxis
+            dataKey="kind"
+            tickLine={false}
+            axisLine={false}
+            tickSize={4}
+            stroke="#fff"
+            fontSize={9}
+          />
           <Radar
-            name="Mike"
-            dataKey="A"
-            stroke="#8884d8"
-            fill="#8884d8"
+            dataKey="value"
+            fill="#FF0101"
             fillOpacity={0.6}
+            legendType="none"
           />
         </RadarChart>
       </ResponsiveContainer>
