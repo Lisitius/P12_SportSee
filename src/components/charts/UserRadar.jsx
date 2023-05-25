@@ -4,14 +4,12 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
 import usePerformanceData from "../../hooks/usePerformanceData";
 
 const UserRadar = () => {
-  const testData = usePerformanceData();
-  // console.log(testData);
+  const performance = usePerformanceData();
 
   const kinds = [
     "Intensité",
@@ -23,10 +21,8 @@ const UserRadar = () => {
   ];
 
   const dataRadar = kinds.map((kind, index) => {
-    return { kind, value: testData?.data?.[index]?.value };
+    return { kind, value: performance?.data?.[index]?.value };
   });
-
-  console.log(dataRadar);
 
   return (
     <div className="radarContainer">
