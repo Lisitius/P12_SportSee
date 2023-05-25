@@ -14,12 +14,12 @@ const UserRadar = () => {
   // console.log(testData);
 
   const kinds = [
+    "Intensité",
     "Cardio",
     "Energie",
     "Endurance",
     "Force",
     "Vitesse",
-    "Intensité",
   ];
 
   const dataRadar = kinds.map((kind, index) => {
@@ -31,13 +31,13 @@ const UserRadar = () => {
   return (
     <div className="radarContainer">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={75} data={dataRadar}>
+        <RadarChart outerRadius={82} data={dataRadar}>
           <PolarGrid radialLines={false} stroke="#fff" />
           <PolarAngleAxis
             dataKey="kind"
             tickLine={false}
             axisLine={false}
-            tickSize={4}
+            tickSize={10}
             stroke="#fff"
             fontSize={9}
           />
