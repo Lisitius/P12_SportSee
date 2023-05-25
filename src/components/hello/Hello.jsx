@@ -16,6 +16,7 @@ import { useHelloData } from "../../hooks/useUserData";
 const Hello = () => {
   const { id } = useParams();
   const { firstName } = useHelloData(id);
+
   return (
     <div className="hello">
       <h1 className="hello__title">

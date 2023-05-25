@@ -44,3 +44,21 @@ export const useKeyData = (userId) => {
 
   return user;
 };
+
+//score
+export const useScoreData = (userId) => {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const userData = await getUserData(userId);
+
+      console.log(userData);
+      setUser(userData);
+    };
+
+    fetchUser();
+  }, [userId]);
+
+  return user;
+};
