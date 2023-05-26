@@ -1,7 +1,7 @@
 @use "../utils/index" as u;
 
 .scoreContainer {
-  width: 220px;
+  width: 240px;
   height: 233px;
   @media (max-width: 1300px) {
     width: 170px;
@@ -15,6 +15,11 @@
     left: 50px;
     z-index: 10;
     opacity: 0.9;
+    @media (max-width: 1300px) {
+      top: 10px;
+      left: 30px;
+      @include u.fonts(12px, 500, u.$dark-gray);
+    }
   }
 
   &__score {

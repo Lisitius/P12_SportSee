@@ -1,8 +1,10 @@
 .dashboard {
   position: relative;
-  margin-left: 15%;
-  margin-top: 1%;
+  margin-left: 20%;
+  margin-top: 3%;
   @media (max-width: 1300px) {
+    margin-top: 3%;
+    margin-left: 15%;
   }
 
   &__ossekour {
@@ -23,10 +25,8 @@
 
     .triple {
       margin-top: 30px;
-
-      .chart {
-        margin-right: 20px;
-      }
+      display: flex;
+      justify-content: space-between;
     }
   }
 
@@ -36,7 +36,7 @@
     justify-content: center;
     width: 180px;
     height: 500px;
-    margin-left: 50px;
+    margin-left: 100px;
     @media (max-width: 1300px) {
       width: 150px;
       margin-left: 50px;

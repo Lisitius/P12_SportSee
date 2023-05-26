@@ -37,15 +37,24 @@
 
   &__informations {
     margin-left: 30px;
+    @media (max-width: 1300px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__number {
     @include u.fonts(20px, 700, u.$secondary-color);
     margin-bottom: 5px;
+    @media (max-width: 1300px) {
+      @include u.fonts(15px, 700, u.$secondary-color);
+    }
   }
 
   &__name {
     @include u.fonts(14px, 500, u.$light-gray);
     margin: 0;
+    @media (max-width: 1300px) {
+      @include u.fonts(10px, 500, u.$light-gray);
+    }
   }
 }
