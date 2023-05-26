@@ -80,7 +80,11 @@ const UserActivity = () => {
             iconSize={8}
             align="right"
             verticalAlign="top"
-            wrapperStyle={{ top: 0, right: 0, marginBottom: "20px" }}
+            wrapperStyle={{
+              top: 0,
+              right: 0,
+              marginBottom: "20px",
+            }}
             formatter={(value) => (
               <span className="barChart__textColorLegend">{value}</span>
             )}

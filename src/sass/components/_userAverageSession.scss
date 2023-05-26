@@ -2,7 +2,7 @@
 
 .lineContainer {
   background-color: u.$tertiary-color;
-  width: 220px;
+  width: 240px;
   height: 233px;
   border-radius: 6px;
   overflow: hidden;
@@ -46,4 +46,13 @@
 .recharts-cartesian-axis {
   transform: scaleX(0.9);
   transform-origin: center;
+}
+
+@media (max-width: 1300px) {
+  .radar-container {
+    .recharts-wrapper svg {
+      width: 170px;
+      height: 170px;
+    }
+  }
 }

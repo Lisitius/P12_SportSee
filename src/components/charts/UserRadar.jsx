@@ -26,8 +26,8 @@ const UserRadar = () => {
 
   return (
     <div className="radarContainer">
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={82} data={dataRadar}>
+      <ResponsiveContainer width="100%" height={233}>
+        <RadarChart outerRadius={"65%"} data={dataRadar}>
           <PolarGrid radialLines={false} stroke="#fff" />
           <PolarAngleAxis
             dataKey="kind"
