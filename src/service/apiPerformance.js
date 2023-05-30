@@ -8,7 +8,6 @@ export const getUserPerformance = async (userId) => {
     );
     return response.data.data;
   } catch (error) {
-    console.error("Impossible de récupéré les données venant de l'api");
     const performance = userPerformance.find(
       (performance) => performance.data.userId === Number(userId)
     );

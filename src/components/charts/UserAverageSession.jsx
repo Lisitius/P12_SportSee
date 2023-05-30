@@ -11,6 +11,7 @@ import useSessionsData from "../../hooks/useSessionsData";
 
 const UserAverageSession = () => {
   const data = useSessionsData();
+  console.log(data);
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {

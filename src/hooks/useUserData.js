@@ -53,7 +53,6 @@ export const useScoreData = (userId) => {
     const fetchUser = async () => {
       const userData = await getUserData(userId);
 
-      console.log(userData);
       setUser(userData);
     };
 

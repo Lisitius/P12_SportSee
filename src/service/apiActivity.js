@@ -18,7 +18,6 @@ export const getUserActivity = async (userId) => {
     );
     return response.data.data;
   } catch (error) {
-    console.error("Impossible de récupéré les données venant de l'api");
     const activity = userActivity.find(
       (activity) => activity.data.userId === Number(userId)
     );
