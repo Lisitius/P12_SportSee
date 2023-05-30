@@ -1,0 +1,26 @@
+@use "../utils/index" as u;
+
+.error {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 11%;
+  margin-top: 14%;
+
+  &__title {
+    @include u.fonts(120px, 700, u.$tertiary-color);
+    text-align: center;
+  }
+
+  &__text {
+    @include u.fonts(20px, 500, u.$secondary-color);
+    margin-bottom: 180px;
+    text-align: center;
+  }
+
+  a {
+    @include u.fonts(20px, 500, u.$secondary-color);
+    text-decoration: underline;
+    text-align: center;
+  }
+}

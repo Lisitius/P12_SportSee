@@ -20,7 +20,6 @@ const UserScore = () => {
     },
   ];
 
-  console.log("Score" + score);
   return (
     <div className="scoreContainer">
       <div className="scoreContainer__title">Score</div>

@@ -17,11 +17,7 @@ export const getUserData = async (userId) => {
   try {
     const response = await axios.get(`http://localhost:3000/user/${userId}`);
     return response.data.data;
-  } catch (error) {
-    console.error(
-      "Erreur lors de la récupération des données de l'utilisateur :",
-      error
-    );
+  } catch (err) {
     const mockUser = users.find((user) => user.data.id === Number(userId));
     if (mockUser) {
       return mockUser.data;
