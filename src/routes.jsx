@@ -8,6 +8,7 @@ const routeFile = () => {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/user/:id" element={<Dashboard />} />
+      <Route path="/404" element={<Error404 />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
   );
