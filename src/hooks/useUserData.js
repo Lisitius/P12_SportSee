@@ -4,6 +4,7 @@
 
 import { useEffect, useState } from "react";
 import { getUserData } from "../service/apiUser";
+import { useNavigate } from "react-router-dom";
 
 /**
  * A custom hook to retrieve user-specific data
@@ -15,32 +16,50 @@ import { getUserData } from "../service/apiUser";
 
 export const useHelloData = (userId) => {
   const [user, setUser] = useState({});
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
-      const userData = await getUserData(userId);
-
-      setUser(userData.userInfos);
+      try {
+        const userData = await getUserData(userId);
+        setUser(userData.userInfos);
+      } catch (err) {
+        setError(err);
+        if (err.message === "Utilisateur non trouvé dans les données mock") {
+          navigate("/404");
+        }
+      }
     };
 
     fetchUser();
-  }, [userId]);
+  }, [userId, navigate]);
+
+  if (error) {
+    return { error };
+  }
 
   return user;
 };
 
 export const useKeyData = (userId) => {
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
-      const userData = await getUserData(userId);
-
-      setUser(userData.keyData);
+      try {
+        const userData = await getUserData(userId);
+        setUser(userData.keyData);
+      } catch (err) {
+        if (err.message === "Utilisateur non trouvé dans les données mock") {
+          navigate("/404");
+        }
+      }
     };
 
     fetchUser();
-  }, [userId]);
+  }, [userId, navigate]);
 
   return user;
 };
@@ -48,16 +67,22 @@ export const useKeyData = (userId) => {
 //score
 export const useScoreData = (userId) => {
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
-      const userData = await getUserData(userId);
-
-      setUser(userData);
+      try {
+        const userData = await getUserData(userId);
+        setUser(userData);
+      } catch (err) {
+        if (err.message === "Utilisateur non trouvé dans les données mock") {
+          navigate("/404");
+        }
+      }
     };
 
     fetchUser();
-  }, [userId]);
+  }, [userId, navigate]);
 
   return user;
 };

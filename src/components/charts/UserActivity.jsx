@@ -45,8 +45,8 @@ const UserActivity = () => {
           barSize={7}
           margin={{
             top: 20,
-            right: 30,
-            left: 20,
+            right: 0,
+            left: 0,
             bottom: 20,
           }}
         >
@@ -54,7 +54,8 @@ const UserActivity = () => {
           <XAxis
             axisLine={false}
             tickLine={false}
-            tickMargin={16}
+            tickMargin={20}
+            tickCount={7}
             dataKey="day"
           />
           <YAxis

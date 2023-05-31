@@ -39,11 +39,13 @@ const UserAverageSession = () => {
         >
           <XAxis
             dataKey="day"
-            interval={0}
             axisLine={false}
             tickLine={false}
             tickMargin={40}
+            tickCount={7}
             tick={{ fill: "#fff", opacity: "0.4", fontSize: 10 }}
+            padding={{ left: 10, right: 10 }}
+            minTickGap={1}
           />
           <YAxis
             axisLine={false}
