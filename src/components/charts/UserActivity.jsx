@@ -75,14 +75,13 @@ const UserActivity = () => {
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend
-            className="legend"
             iconType="circle"
             iconSize={8}
             align="right"
             verticalAlign="top"
             wrapperStyle={{
               top: 0,
-              right: 0,
+              right: 80,
               marginBottom: "20px",
             }}
             formatter={(value) => (
