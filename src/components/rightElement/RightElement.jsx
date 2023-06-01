@@ -1,16 +1,27 @@
+import React from "react";
 import "../../sass/components/_rightElement.scss";
 import energy from "../../assets/rightIcon/energy.png";
 import chicken from "../../assets/rightIcon/chicken.png";
 import apple from "../../assets/rightIcon/apple.png";
 import cheese from "../../assets/rightIcon/cheeseburger.png";
-
 import { useParams } from "react-router-dom";
 import { useKeyData } from "../../hooks/useUserData";
+import Loading from "../../layouts/Loading";
 
+/**
+ * React component that displays a user's nutritional information.
+ *
+ * @returns {JSX.Element} The JSX element of the RightElement view.
+ */
 const RightElement = () => {
   const { id } = useParams();
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
     useKeyData(id);
+
+  // If the data is not yet loaded, show the loading component.
+  if (!calorieCount || !proteinCount || !carbohydrateCount || !lipidCount) {
+    return <Loading />;
+  }
 
   return (
     <div className="elements">
@@ -20,7 +31,7 @@ const RightElement = () => {
           <img src={energy} alt="Icône Calories" />
         </div>
         <div className="elements__informations">
-          <p className="elements__number">{calorieCount + " " + "kCal"}</p>
+          <p className="elements__number">{`${calorieCount} kCal`}</p>
           <p className="elements__name">Calories</p>
         </div>
       </div>
@@ -30,7 +41,7 @@ const RightElement = () => {
           <img src={chicken} alt="Icône Proteines" />
         </div>
         <div className="elements__informations">
-          <p className="elements__number">{proteinCount + " " + "g"}</p>
+          <p className="elements__number">{`${proteinCount} g`}</p>
           <p className="elements__name">Proteines</p>
         </div>
       </div>
@@ -40,7 +51,7 @@ const RightElement = () => {
           <img src={apple} alt="Icône Glucides" />
         </div>
         <div className="elements__informations">
-          <p className="elements__number">{carbohydrateCount + " " + "g"}</p>
+          <p className="elements__number">{`${carbohydrateCount} g`}</p>
           <p className="elements__name">Glucides</p>
         </div>
       </div>
@@ -50,7 +61,7 @@ const RightElement = () => {
           <img src={cheese} alt="Icône Lipides" />
         </div>
         <div className="elements__informations">
-          <p className="elements__number">{lipidCount + " " + "g"}</p>
+          <p className="elements__number">{`${lipidCount} g`}</p>
           <p className="elements__name">Lipides</p>
         </div>
       </div>

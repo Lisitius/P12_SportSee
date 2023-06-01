@@ -1,0 +1,5 @@
+@use "../utils/index" as u;
+
+.loading {
+  @include u.fonts(18px, 500, u.$tertiary-color);
+}

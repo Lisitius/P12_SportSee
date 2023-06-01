@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../sass/pages/_404.scss";
 
+/**
+ * Error component displaying a 404 error page.
+ *
+ * @returns {React.Element} React element representing a 404 error page with a link to return to the homepage.
+ */
 const Error = () => {
   return (
     <div className="error">

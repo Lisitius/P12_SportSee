@@ -1,19 +1,19 @@
 /**
- * @module apiSessions
+ * @module getUserSessions
  */
 
 import axios from "axios";
 import { userSessions } from "../mockApi/mockApi";
 
 /**
- * Fetch a user's session data from an API.
- * If the API request fails, the function tries to retrieve the data from an API simulation (mock).
+ * Retrieves a user's average sessions from their ID.
  *
- * @param {string} userId - The user id for which sessions should be retrieved.
- * @returns {Promise<Object>} A promise that resolves to an object containing the user's sessions.
- * @throws {Error} An error is thrown if the API request fails and the user cannot be found in the mock data.
+ * @async
+ * @function
+ * @param {string|number} userId - user ID.
+ * @returns {Promise<Object>} The average user sessions.
+ * @throws {Error} Raises an error if the user is not found in the mock data.
  */
-
 export const getUserSessions = async (userId) => {
   try {
     const response = await axios.get(
@@ -27,6 +27,7 @@ export const getUserSessions = async (userId) => {
     if (mockSessions) {
       return mockSessions.data;
     }
+
     throw new Error("Utilisateur non trouvé dans les données mock");
   }
 };

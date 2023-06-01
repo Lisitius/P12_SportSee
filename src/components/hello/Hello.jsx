@@ -9,6 +9,7 @@ import { useHelloData } from "../../hooks/useUserData";
 
 /**
  * The Hello component displays a welcome message to the user in the Dashboard page.
+ * Uses useHelloData custom hook to retrieve data.
  *
  * @returns {JSX.Element} A welcome message for the user.
  */
