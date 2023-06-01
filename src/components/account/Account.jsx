@@ -1,7 +1,3 @@
-/**
- * @module Account
- */
-
 import "../../sass/components/_account.scss";
 import { Link } from "react-router-dom";
 import { useAccountData } from "../../hooks/useAccountData";

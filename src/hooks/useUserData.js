@@ -1,7 +1,3 @@
-/**
- * @module useHelloData
- */
-
 import { useEffect, useState } from "react";
 import { getUserData } from "../service/apiUser";
 import { useNavigate } from "react-router-dom";

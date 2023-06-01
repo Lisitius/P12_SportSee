@@ -3,6 +3,11 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Error404 from "./pages/404";
 
+/**
+ * Function that defines application routes.
+ *
+ * @returns {JSX.Element} Application routes.
+ */
 const routeFile = () => {
   return (
     <Routes>
