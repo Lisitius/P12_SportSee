@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import "../../sass/components/_userAverageSession.scss";
 import {
   LineChart,
@@ -9,31 +8,22 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import useSessionsData from "../../hooks/useSessionsData";
-import Loading from "../../layouts/Loading";
 
 /**
- * Component to display the average duration of user sessions.
+ * React component to display the average duration of a user's sessions.
  * Uses useSessionsData custom hook to retrieve data.
  *
- * @returns {ReactNode} Returns LineChart component with user sessions data.
+ * @returns {ReactNode} Returns a LineChart component with user session data.
  */
 const UserAverageSession = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const data = useSessionsData();
 
-  // Updates loading status when data is available.
-  useEffect(() => {
-    if (data) {
-      setIsLoading(false);
-    }
-  }, [data]);
-
   /**
-   * Component for chart tooltip customization.
+   * Component to customize chart tooltip.
    *
-   * @param {boolean} active - If the tooltip is active.
+   * @param {boolean} active - Indicates whether the tooltip is active.
    * @param {Object[]} payload - Tooltip data.
-   * @returns {ReactNode} Returns custom tooltip or null.
+   * @returns {ReactNode} Returns a custom tooltip or null.
    */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -45,11 +35,6 @@ const UserAverageSession = () => {
     }
     return null;
   };
-
-  // Displays a loading component while data is being retrieved.
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className="lineContainer">

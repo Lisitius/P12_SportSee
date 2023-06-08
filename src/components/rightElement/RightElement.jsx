@@ -6,7 +6,6 @@ import apple from "../../assets/rightIcon/apple.png";
 import cheese from "../../assets/rightIcon/cheeseburger.png";
 import { useParams } from "react-router-dom";
 import { useKeyData } from "../../hooks/useUserData";
-import Loading from "../../layouts/Loading";
 
 /**
  * React component that displays a user's nutritional information.
@@ -17,11 +16,6 @@ const RightElement = () => {
   const { id } = useParams();
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
     useKeyData(id);
-
-  // If the data is not yet loaded, show the loading component.
-  if (!calorieCount || !proteinCount || !carbohydrateCount || !lipidCount) {
-    return <Loading />;
-  }
 
   return (
     <div className="elements">

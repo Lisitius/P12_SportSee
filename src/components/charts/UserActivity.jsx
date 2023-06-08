@@ -1,5 +1,4 @@
 import "../../sass/components/_userActivity.scss";
-import React, { useEffect, useState } from "react";
 import {
   BarChart,
   CartesianGrid,
@@ -11,7 +10,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import useActivityData from "../../hooks/useActivityData";
-import Loading from "../../layouts/Loading";
 
 /**
  * Component for chart tooltip customization.
@@ -39,20 +37,7 @@ const CustomTooltip = ({ active, payload }) => {
  * @returns {ReactElement} The user activity component
  */
 const UserActivity = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const data = useActivityData();
-
-  // Updates loading status when data is available.
-  useEffect(() => {
-    if (data) {
-      setIsLoading(false);
-    }
-  }, [data]);
-
-  // Display the loading component if the data is not yet loaded
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className="barChart">

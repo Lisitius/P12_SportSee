@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import "../../sass/components/_userRadar.scss";
 import {
   Radar,
@@ -8,7 +7,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import usePerformanceData from "../../hooks/usePerformanceData";
-import Loading from "../../layouts/Loading";
 
 /**
  * Component to show average user performance in a graph
@@ -17,17 +15,8 @@ import Loading from "../../layouts/Loading";
  * @returns {ReactNode} Returns RadarChart component with user performance data.
  */
 const UserRadar = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   // Uses custom hook to retrieve performance data.
   const performance = usePerformanceData();
-
-  // Updates loading status when performance data is available.
-  useEffect(() => {
-    if (performance) {
-      setIsLoading(false);
-    }
-  }, [performance]);
 
   // Lists all statistics name for the chart.
   const kinds = [
@@ -43,11 +32,6 @@ const UserRadar = () => {
   const dataRadar = kinds.map((kind, index) => {
     return { kind, value: performance?.data?.[index]?.value };
   });
-
-  // Displays a loading component while performance data is retrieved.
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className="radarContainer">

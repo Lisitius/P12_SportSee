@@ -1,24 +1,37 @@
-import { useState, useEffect } from "react";
-import { getUserActivity } from "../service/apiActivity";
+import { useState, useEffect, useContext } from "react";
+import { getUserActivityFromApi } from "../utils/service/apiUser";
+import { getUserActivityFromMock } from "../utils/service/mockUser";
 import { useParams, useNavigate } from "react-router-dom";
+import { MockDataContext } from "../utils/context/MockDataContext";
 
 /**
- * A custom hook to retrieve activity data for a specific user
- * @returns {Array} The list of the user's daily activity sessions.
+ * Custom hook to retrieve user activity data.
+ *
+ * This hook retrieves a user's activity data based on their ID.
+ * Activity data can be retrieved either from an API or from a mock dataset,
+ * depending on the 'useMock' context.
+ *
+ * The retrieved data is then transformed: for each activity session, we add a 'day' attribute that corresponds
+ * to the session index in the array + 1.
+ *
+ * If an error occurs while retrieving activity data (for example, if the user is not found),
+ * the user is redirected to a 404 error page.
+ *
+ * @returns {Array} An array containing user activity data, or an empty array if the data is not yet loaded.
  */
 const useActivityData = () => {
   const [data, setData] = useState([]);
-  const { id } = useParams(); // Get the id from the url
+  const { id } = useParams();
   const navigate = useNavigate();
+  const { useMock } = useContext(MockDataContext);
 
   useEffect(() => {
-    // Asynchronous function to retrieve daily user activity data.
     const fetchData = async () => {
       try {
-        // Makes a request to the API to retrieve user activity data.
-        const result = await getUserActivity(id);
+        const result = useMock
+          ? await getUserActivityFromMock(id)
+          : await getUserActivityFromApi(id);
 
-        // Transforms the received data to transform the date into a number.
         const numberData = result.sessions.map((session, index) => ({
           ...session,
           day: index + 1,
@@ -26,16 +39,12 @@ const useActivityData = () => {
 
         setData(numberData);
       } catch (err) {
-        // If the user is not found, redirects to the 404 page.
-        if (err.message === "Utilisateur non trouvé dans les données mock") {
-          navigate("/404");
-        }
+        navigate("/404");
       }
     };
 
-    // Call of the fetchData function when mounting the component or when 'id' changes.
     fetchData();
-  }, [id, navigate]);
+  }, [id, navigate, useMock]);
 
   return data;
 };

@@ -1,31 +1,45 @@
 import { useEffect, useState } from "react";
-import { getUserData } from "../service/apiUser";
+import { getUserDataFromApi } from "../utils/service/apiUser";
+import { getUserDataFromMock } from "../utils/service/mockUser";
 
 /**
- * A custom hook to retrieve user data.
+ * Custom hook to fetch data from multiple users.
  *
- * @returns {Array} The list of users.
+ * This hook retrieves data from users with IDs 12 and 18.
+ * User data can be retrieved either from an API or from a mock dataset,
+ * depending on the 'useMock' parameter.
+ *
+ * If an error occurs while retrieving a user's data
+ * (for example, if the user is not found), an error is logged in the console.
+ *
+ * @returns {Array} An array containing user data, or an empty array if the data is not yet loaded.
  */
-export const useAccountData = () => {
+export const useAccountData = (useMock = false) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    // Asynchronous function to retrieve user data.
     const fetchUsers = async () => {
       const userIds = [12, 18];
       const fetchedUsers = [];
 
-      // For each user ID in userIds, fetches the user data and adds it to fetchedUsers.
       for (const id of userIds) {
-        const userData = await getUserData(id);
-        fetchedUsers.push(userData);
+        try {
+          const userData = useMock
+            ? await getUserDataFromMock(id)
+            : await getUserDataFromApi(id);
+          fetchedUsers.push(userData);
+        } catch (error) {
+          console.error(
+            `Erreur lors de la récupération des données de l'utilisateur: ${error.message}`
+          );
+        }
       }
 
       setUsers(fetchedUsers);
     };
 
     fetchUsers();
-  }, []);
+  }, [useMock]);
 
   return users;
 };

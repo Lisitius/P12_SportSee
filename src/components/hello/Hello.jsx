@@ -1,7 +1,3 @@
-/**
- * @module Hello
- */
-
 import "../../sass/components/_hello.scss";
 import React from "react";
 import { useParams } from "react-router-dom";
