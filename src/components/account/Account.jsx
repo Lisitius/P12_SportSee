@@ -1,18 +1,21 @@
 import "../../sass/components/_account.scss";
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import { useAccountData } from "../../hooks/useAccountData";
-
-/**
- * The Account component displays a list of users.
- *
- * @returns {JSX.Element} The list of users.
- */
+import { MockDataContext } from "../../utils/context/MockDataContext";
 
 const Account = () => {
-  const users = useAccountData();
+  const { useMock, setUseMock } = useContext(MockDataContext);
+  const users = useAccountData(useMock);
 
   return (
     <div className="users">
+      <input
+        type="checkbox"
+        checked={useMock}
+        onChange={() => setUseMock(!useMock)}
+      />
+      <label className="users__mock">Utiliser les données mock</label>
       {users.map((user) => (
         <div key={user.id}>
           <Link to={`/user/${user.id}`} className="users__user">
