@@ -4,9 +4,9 @@ Make SportSee site profile page with React.
 
 ### Prerequisites
 
-NodeJS : https://nodejs.org/en/download
-NPM : https://www.npmjs.com/
-Git : https://git-scm.com/
+NodeJS : https://nodejs.org/en/download  
+NPM : https://www.npmjs.com/  
+Git : https://git-scm.com/  
 
 ### Dependencies
 
