@@ -35,6 +35,6 @@ Launch :
 
 ```bash
 npm start
-Backend on 3000
-Frontend on 4000
+1. Backend on 3000
+2. Frontend on 4000
 ```
