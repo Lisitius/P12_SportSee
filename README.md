@@ -25,7 +25,7 @@ frontend : git clone https://github.com/Lisitius/P12_SportSee.git
 backend : git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 ```
 
-Install the node packages in both :
+Install the node modules in both :
 
 ```bash
 npm install
