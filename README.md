@@ -4,9 +4,9 @@ Make SportSee site profile page with React.
 
 ### Prerequisites
 
-NodeJS : https://nodejs.org/en/download
-NPM : https://www.npmjs.com/
-Git : https://git-scm.com/
+NodeJS : https://nodejs.org/en/download  
+NPM : https://www.npmjs.com/  
+Git : https://git-scm.com/  
 
 ### Dependencies
 
@@ -25,7 +25,7 @@ frontend : git clone https://github.com/Lisitius/P12_SportSee.git
 backend : git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 ```
 
-Install the node packages in both :
+Install the node modules in both :
 
 ```bash
 npm install
@@ -35,6 +35,6 @@ Launch :
 
 ```bash
 npm start
-Backend on 3000
-Frontend on 4000
+1. Backend on 3000
+2. Frontend on 4000
 ```
